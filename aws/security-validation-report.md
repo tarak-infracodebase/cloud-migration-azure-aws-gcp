@@ -7,12 +7,12 @@ Comprehensive security scanning and validation completed for multi-cloud Infrast
 ## Validation Results
 
 ### Terraform Syntax Validation
-- ✅ **AWS Configuration**: All syntax checks passed
-- ✅ **GCP Configuration**: All syntax checks passed
+- **AWS Configuration**: All syntax checks passed
+- **GCP Configuration**: All syntax checks passed
 
 ### Terraform Plan Validation
-- ✅ **AWS Configuration**: Successfully planned 68 resources for creation
-- ✅ **GCP Configuration**: Successfully planned 5 resources for creation (authentication error expected without credentials)
+- **AWS Configuration**: Successfully planned 68 resources for creation
+- **GCP Configuration**: Successfully planned 5 resources for creation (authentication error expected without credentials)
 
 ## Security Scanning Results
 

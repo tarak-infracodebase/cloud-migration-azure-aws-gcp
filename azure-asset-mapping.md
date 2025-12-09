@@ -155,14 +155,14 @@ This Azure subscription contains **14 resources** across **4 resource groups** i
 
 ## Security Posture Summary
 
-### ✅ Security Strengths
+### Security Strengths
 - HTTPS enforced on all storage accounts
 - Minimum TLS 1.2 configured
 - Private blob access disabled on shared storage
 - Key Vaults deployed for secret management
 - SSL certificate configured for custom domain
 
-### ⚠️ Areas for Review
+### Areas for Review
 - One storage account has public blob access enabled (`stouse2icbdev`)
 - No explicit network security groups identified
 - PostgreSQL server accessibility needs verification
