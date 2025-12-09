@@ -2,7 +2,7 @@
 
 This repository contains Infrastructure as Code (IaC) implementations for deploying equivalent application infrastructure across multiple cloud providers using Terraform.
 
-## 📋 Project Overview
+## Project Overview
 
 This project demonstrates multi-cloud infrastructure patterns by implementing the same application architecture across:
 
@@ -12,7 +12,7 @@ This project demonstrates multi-cloud infrastructure patterns by implementing th
 
 Each implementation follows cloud-specific best practices while maintaining architectural equivalency for a containerized web application with database backend.
 
-## 🏗️ Architecture
+## Architecture
 
 ### Application Components
 - **Web Application**: Containerized application (Azure App Service → AWS ECS Fargate → GCP Cloud Run)
@@ -29,7 +29,7 @@ Each implementation follows cloud-specific best practices while maintaining arch
 
 View diagrams in the Canvas tab of your IDE.
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 ├── README.md                          # This file
@@ -67,7 +67,7 @@ View diagrams in the Canvas tab of your IDE.
     └── .gitignore                     # Terraform-specific gitignore
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Terraform >= 1.13
@@ -111,7 +111,7 @@ View diagrams in the Canvas tab of your IDE.
    terraform apply
    ```
 
-## 🔐 Security
+## Security
 
 ### Security Scanning Results
 
@@ -128,14 +128,14 @@ This project has been scanned with industry-standard security tools:
 See `security-validation-report.md` for detailed findings and remediation steps.
 
 ### Security Features
-- ✅ Private networking with NAT gateways
-- ✅ Encrypted storage (RDS, Cloud SQL, S3, Cloud Storage)
-- ✅ Secrets management integration
-- ✅ Network security groups/firewall rules
-- ✅ IAM roles with principle of least privilege
-- ✅ CloudWatch/Cloud Monitoring integration
+- Private networking with NAT gateways
+- Encrypted storage (RDS, Cloud SQL, S3, Cloud Storage)
+- Secrets management integration
+- Network security groups/firewall rules
+- IAM roles with principle of least privilege
+- CloudWatch/Cloud Monitoring integration
 
-## 📊 Resource Mapping
+## Resource Mapping
 
 | Component | Azure | AWS | GCP |
 |-----------|-------|-----|-----|
@@ -147,7 +147,7 @@ See `security-validation-report.md` for detailed findings and remediation steps.
 | Load Balancer | App Gateway | ALB | Cloud Load Balancer |
 | Monitoring | Monitor | CloudWatch | Cloud Monitoring |
 
-## 🏷️ Tagging Strategy
+## Tagging Strategy
 
 All resources are consistently tagged with:
 - `Project`: Project identifier
@@ -155,7 +155,7 @@ All resources are consistently tagged with:
 - `ManagedBy`: Terraform
 - `Name`: Resource-specific naming
 
-## 📈 Monitoring & Alerting
+## Monitoring & Alerting
 
 Both AWS and GCP implementations include:
 - Application performance monitoring
@@ -168,7 +168,7 @@ Both AWS and GCP implementations include:
   - Database connection issues
   - Application response time (>1s)
 
-## 💰 Cost Optimization
+## Cost Optimization
 
 ### AWS Configuration
 - Uses t3.micro instances for development
@@ -182,22 +182,22 @@ Both AWS and GCP implementations include:
 - Standard storage classes
 - Cost-effective monitoring retention
 
-## 🔄 CI/CD Integration
+## CI/CD Integration
 
 The Terraform configurations are ready for CI/CD integration with:
-- ✅ Version pinning for providers
-- ✅ Backend configuration ready
-- ✅ Validation and security scanning
-- ✅ Modular structure for reusability
+- Version pinning for providers
+- Backend configuration ready
+- Validation and security scanning
+- Modular structure for reusability
 
-## 📚 Documentation
+## Documentation
 
 - [Azure Asset Mapping Report](azure-asset-mapping.md)
 - [Security Validation Report](security-validation-report.md)
 - [Terraform AWS Modules Documentation](aws/README.md)
 - [Terraform GCP Modules Documentation](gcp/README.md)
 
-## 🤝 Contributing
+## Contributing
 
 1. Follow Terraform style guide and formatting
 2. Run security scans before committing:
@@ -210,13 +210,13 @@ The Terraform configurations are ready for CI/CD integration with:
 3. Update documentation for any architectural changes
 4. Ensure all configurations pass validation
 
-## 📋 Known Issues
+## Known Issues
 
 1. **AWS Security**: 34 security findings require remediation before production
 2. **GCP Authentication**: Requires service account credentials for deployment
 3. **Cost Monitoring**: Additional cost alerts recommended for production use
 
-## 🛠️ Maintenance
+## Maintenance
 
 ### Regular Tasks
 - [ ] Update provider versions quarterly
@@ -230,7 +230,7 @@ The Terraform configurations are ready for CI/CD integration with:
 - **v1.1**: Security scanning integration
 - **v1.2**: Architecture diagram automation
 
-## 📞 Support
+## Support
 
 For infrastructure questions or issues:
 1. Check existing documentation
@@ -238,12 +238,12 @@ For infrastructure questions or issues:
 3. Validate Terraform configurations
 4. Check cloud provider service health
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
-**Generated with Claude Code** 🤖
+**Generated with Claude Code**
 
 This infrastructure project demonstrates multi-cloud IaC best practices with comprehensive security scanning and architectural documentation.
