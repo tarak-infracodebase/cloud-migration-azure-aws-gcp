@@ -1,0 +1,222 @@
+{
+  "nodes": [
+    {
+      "id": "vpc",
+      "label": "VPC Network",
+      "subtitle": "infracodebase-dev-vpc",
+      "icon": "/icons/gcp/network/network.png"
+    },
+    {
+      "id": "private-subnet",
+      "label": "Private Subnet",
+      "subtitle": "10.0.1.0/24",
+      "icon": "/icons/gcp/network/network.png"
+    },
+    {
+      "id": "cloud-router",
+      "label": "Cloud Router",
+      "subtitle": "infracodebase-dev-router",
+      "icon": "/icons/gcp/network/router.png"
+    },
+    {
+      "id": "nat-gateway",
+      "label": "Cloud NAT",
+      "subtitle": "infracodebase-dev-nat",
+      "icon": "/icons/gcp/network/nat.png"
+    },
+    {
+      "id": "vpc-connector",
+      "label": "VPC Connector",
+      "subtitle": "infracodebase-dev-connector",
+      "icon": "/icons/gcp/network/network.png"
+    },
+    {
+      "id": "cloud-run",
+      "label": "Cloud Run",
+      "subtitle": "infracodebase-dev-app",
+      "icon": "/icons/gcp/compute/run.png"
+    },
+    {
+      "id": "cloud-sql",
+      "label": "Cloud SQL",
+      "subtitle": "PostgreSQL 16",
+      "icon": "/icons/gcp/database/sql.png"
+    },
+    {
+      "id": "gcs-shared",
+      "label": "Cloud Storage",
+      "subtitle": "Shared Bucket",
+      "icon": "/icons/gcp/storage/storage.png"
+    },
+    {
+      "id": "gcs-app",
+      "label": "Cloud Storage",
+      "subtitle": "App Bucket",
+      "icon": "/icons/gcp/storage/storage.png"
+    },
+    {
+      "id": "secret-mgr-shared",
+      "label": "Secret Manager",
+      "subtitle": "Shared Secrets",
+      "icon": "/icons/gcp/security/secret-manager.png"
+    },
+    {
+      "id": "secret-mgr-app",
+      "label": "Secret Manager",
+      "subtitle": "App Secrets",
+      "icon": "/icons/gcp/security/secret-manager.png"
+    },
+    {
+      "id": "cloud-monitoring",
+      "label": "Cloud Monitoring",
+      "subtitle": "Metrics & Alerts",
+      "icon": "/icons/gcp/operations/monitoring.png"
+    },
+    {
+      "id": "cloud-logging",
+      "label": "Cloud Logging",
+      "subtitle": "Application Logs",
+      "icon": "/icons/gcp/operations/logging.png"
+    },
+    {
+      "id": "load-balancer",
+      "label": "Load Balancer",
+      "subtitle": "Global HTTP(S) LB",
+      "icon": "/icons/gcp/network/load-balancing.png"
+    },
+    {
+      "id": "service-account",
+      "label": "Service Account",
+      "subtitle": "infracodebase-dev-cloud-run",
+      "icon": "/icons/gcp/security/iam.png"
+    }
+  ],
+  "edges": [
+    {
+      "id": "vpc-subnet",
+      "source": "vpc",
+      "target": "private-subnet",
+      "label": "contains"
+    },
+    {
+      "id": "router-vpc",
+      "source": "cloud-router",
+      "target": "vpc",
+      "label": "attached to"
+    },
+    {
+      "id": "nat-router",
+      "source": "nat-gateway",
+      "target": "cloud-router",
+      "label": "uses"
+    },
+    {
+      "id": "connector-vpc",
+      "source": "vpc-connector",
+      "target": "vpc",
+      "label": "connects to"
+    },
+    {
+      "id": "cloud-run-connector",
+      "source": "cloud-run",
+      "target": "vpc-connector",
+      "label": "uses"
+    },
+    {
+      "id": "cloud-sql-vpc",
+      "source": "cloud-sql",
+      "target": "private-subnet",
+      "label": "deployed in"
+    },
+    {
+      "id": "lb-cloud-run",
+      "source": "load-balancer",
+      "target": "cloud-run",
+      "label": "routes to"
+    },
+    {
+      "id": "cloud-run-sql",
+      "source": "cloud-run",
+      "target": "cloud-sql",
+      "label": "connects to"
+    },
+    {
+      "id": "cloud-run-gcs-shared",
+      "source": "cloud-run",
+      "target": "gcs-shared",
+      "label": "accesses"
+    },
+    {
+      "id": "cloud-run-gcs-app",
+      "source": "cloud-run",
+      "target": "gcs-app",
+      "label": "uses"
+    },
+    {
+      "id": "cloud-run-secrets-shared",
+      "source": "cloud-run",
+      "target": "secret-mgr-shared",
+      "label": "reads"
+    },
+    {
+      "id": "cloud-run-secrets-app",
+      "source": "cloud-run",
+      "target": "secret-mgr-app",
+      "label": "reads"
+    },
+    {
+      "id": "sa-cloud-run",
+      "source": "service-account",
+      "target": "cloud-run",
+      "label": "used by"
+    },
+    {
+      "id": "sa-gcs-shared",
+      "source": "service-account",
+      "target": "gcs-shared",
+      "label": "accesses"
+    },
+    {
+      "id": "sa-gcs-app",
+      "source": "service-account",
+      "target": "gcs-app",
+      "label": "accesses"
+    },
+    {
+      "id": "sa-secrets-shared",
+      "source": "service-account",
+      "target": "secret-mgr-shared",
+      "label": "reads"
+    },
+    {
+      "id": "sa-secrets-app",
+      "source": "service-account",
+      "target": "secret-mgr-app",
+      "label": "reads"
+    },
+    {
+      "id": "sa-sql",
+      "source": "service-account",
+      "target": "cloud-sql",
+      "label": "connects to"
+    },
+    {
+      "id": "cloud-run-monitoring",
+      "source": "cloud-run",
+      "target": "cloud-monitoring",
+      "label": "metrics to"
+    },
+    {
+      "id": "cloud-run-logging",
+      "source": "cloud-run",
+      "target": "cloud-logging",
+      "label": "logs to"
+    },
+    {
+      "id": "cloud-sql-monitoring",
+      "source": "cloud-sql",
+      "target": "cloud-monitoring",
+      "label": "metrics to"
+    }
+  ]
+}

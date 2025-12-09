@@ -1,0 +1,270 @@
+{
+  "nodes": [
+    {
+      "id": "vpc",
+      "label": "VPC",
+      "subtitle": "infracodebase-dev-vpc",
+      "icon": "/icons/aws/network/vpc.png"
+    },
+    {
+      "id": "public-subnet-1",
+      "label": "Public Subnet",
+      "subtitle": "10.0.101.0/24 (AZ-1a)",
+      "icon": "/icons/aws/network/public-subnet.png"
+    },
+    {
+      "id": "public-subnet-2",
+      "label": "Public Subnet",
+      "subtitle": "10.0.102.0/24 (AZ-1b)",
+      "icon": "/icons/aws/network/public-subnet.png"
+    },
+    {
+      "id": "private-subnet-1",
+      "label": "Private Subnet",
+      "subtitle": "10.0.1.0/24 (AZ-1a)",
+      "icon": "/icons/aws/network/private-subnet.png"
+    },
+    {
+      "id": "private-subnet-2",
+      "label": "Private Subnet",
+      "subtitle": "10.0.2.0/24 (AZ-1b)",
+      "icon": "/icons/aws/network/private-subnet.png"
+    },
+    {
+      "id": "db-subnet-1",
+      "label": "DB Subnet",
+      "subtitle": "10.0.201.0/24 (AZ-1a)",
+      "icon": "/icons/aws/network/private-subnet.png"
+    },
+    {
+      "id": "db-subnet-2",
+      "label": "DB Subnet",
+      "subtitle": "10.0.202.0/24 (AZ-1b)",
+      "icon": "/icons/aws/network/private-subnet.png"
+    },
+    {
+      "id": "igw",
+      "label": "Internet Gateway",
+      "subtitle": "infracodebase-dev-igw",
+      "icon": "/icons/aws/network/internet-gateway.png"
+    },
+    {
+      "id": "nat-1",
+      "label": "NAT Gateway",
+      "subtitle": "infracodebase-dev-nat-1",
+      "icon": "/icons/aws/network/nat-gateway.png"
+    },
+    {
+      "id": "nat-2",
+      "label": "NAT Gateway",
+      "subtitle": "infracodebase-dev-nat-2",
+      "icon": "/icons/aws/network/nat-gateway.png"
+    },
+    {
+      "id": "alb",
+      "label": "Application Load Balancer",
+      "subtitle": "infracodebase-dev-alb",
+      "icon": "/icons/aws/network/elb-application-load-balancer.png"
+    },
+    {
+      "id": "ecs-service",
+      "label": "ECS Service",
+      "subtitle": "infracodebase-dev-app-service",
+      "icon": "/icons/aws/compute/fargate.png"
+    },
+    {
+      "id": "rds",
+      "label": "RDS PostgreSQL",
+      "subtitle": "infracodebase-dev-postgresql",
+      "icon": "/icons/aws/database/rds-postgresql-instance.png"
+    },
+    {
+      "id": "s3-shared",
+      "label": "S3 Bucket",
+      "subtitle": "infracodebase-dev-shared-storage",
+      "icon": "/icons/aws/storage/simple-storage-service-s3-bucket-with-objects.png"
+    },
+    {
+      "id": "s3-app",
+      "label": "S3 Bucket",
+      "subtitle": "infracodebase-dev-app-storage",
+      "icon": "/icons/aws/storage/simple-storage-service-s3-bucket-with-objects.png"
+    },
+    {
+      "id": "secrets-shared",
+      "label": "Secrets Manager",
+      "subtitle": "Shared Secrets",
+      "icon": "/icons/aws/security/secrets-manager.png"
+    },
+    {
+      "id": "secrets-app",
+      "label": "Secrets Manager",
+      "subtitle": "App Secrets",
+      "icon": "/icons/aws/security/secrets-manager.png"
+    },
+    {
+      "id": "cloudwatch",
+      "label": "CloudWatch",
+      "subtitle": "Logs & Monitoring",
+      "icon": "/icons/aws/management/cloudwatch.png"
+    },
+    {
+      "id": "ecs-cluster",
+      "label": "ECS Cluster",
+      "subtitle": "infracodebase-dev-cluster",
+      "icon": "/icons/aws/compute/elastic-container-service.png"
+    }
+  ],
+  "edges": [
+    {
+      "id": "vpc-public-1",
+      "source": "vpc",
+      "target": "public-subnet-1",
+      "label": "contains"
+    },
+    {
+      "id": "vpc-public-2",
+      "source": "vpc",
+      "target": "public-subnet-2",
+      "label": "contains"
+    },
+    {
+      "id": "vpc-private-1",
+      "source": "vpc",
+      "target": "private-subnet-1",
+      "label": "contains"
+    },
+    {
+      "id": "vpc-private-2",
+      "source": "vpc",
+      "target": "private-subnet-2",
+      "label": "contains"
+    },
+    {
+      "id": "vpc-db-1",
+      "source": "vpc",
+      "target": "db-subnet-1",
+      "label": "contains"
+    },
+    {
+      "id": "vpc-db-2",
+      "source": "vpc",
+      "target": "db-subnet-2",
+      "label": "contains"
+    },
+    {
+      "id": "igw-vpc",
+      "source": "igw",
+      "target": "vpc",
+      "label": "attached to"
+    },
+    {
+      "id": "nat-1-public",
+      "source": "nat-1",
+      "target": "public-subnet-1",
+      "label": "deployed in"
+    },
+    {
+      "id": "nat-2-public",
+      "source": "nat-2",
+      "target": "public-subnet-2",
+      "label": "deployed in"
+    },
+    {
+      "id": "alb-public",
+      "source": "alb",
+      "target": "public-subnet-1",
+      "label": "spans"
+    },
+    {
+      "id": "alb-public-2",
+      "source": "alb",
+      "target": "public-subnet-2",
+      "label": "spans"
+    },
+    {
+      "id": "ecs-private",
+      "source": "ecs-service",
+      "target": "private-subnet-1",
+      "label": "runs in"
+    },
+    {
+      "id": "ecs-private-2",
+      "source": "ecs-service",
+      "target": "private-subnet-2",
+      "label": "runs in"
+    },
+    {
+      "id": "rds-db-subnet",
+      "source": "rds",
+      "target": "db-subnet-1",
+      "label": "deployed in"
+    },
+    {
+      "id": "rds-db-subnet-2",
+      "source": "rds",
+      "target": "db-subnet-2",
+      "label": "deployed in"
+    },
+    {
+      "id": "alb-ecs",
+      "source": "alb",
+      "target": "ecs-service",
+      "label": "routes to"
+    },
+    {
+      "id": "ecs-rds",
+      "source": "ecs-service",
+      "target": "rds",
+      "label": "connects to"
+    },
+    {
+      "id": "ecs-s3-shared",
+      "source": "ecs-service",
+      "target": "s3-shared",
+      "label": "accesses"
+    },
+    {
+      "id": "ecs-s3-app",
+      "source": "ecs-service",
+      "target": "s3-app",
+      "label": "uses"
+    },
+    {
+      "id": "ecs-secrets-shared",
+      "source": "ecs-service",
+      "target": "secrets-shared",
+      "label": "reads"
+    },
+    {
+      "id": "ecs-secrets-app",
+      "source": "ecs-service",
+      "target": "secrets-app",
+      "label": "reads"
+    },
+    {
+      "id": "ecs-cloudwatch",
+      "source": "ecs-service",
+      "target": "cloudwatch",
+      "label": "logs to"
+    },
+    {
+      "id": "rds-cloudwatch",
+      "source": "rds",
+      "target": "cloudwatch",
+      "label": "metrics to"
+    },
+    {
+      "id": "alb-cloudwatch",
+      "source": "alb",
+      "target": "cloudwatch",
+      "label": "logs to"
+    },
+    {
+      "id": "cluster-service",
+      "source": "ecs-cluster",
+      "target": "ecs-service",
+      "label": "hosts"
+    }
+  ]
+}

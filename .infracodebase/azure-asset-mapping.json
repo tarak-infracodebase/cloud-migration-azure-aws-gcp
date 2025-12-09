@@ -1,0 +1,258 @@
+{
+  "nodes": [
+    {
+      "id": "rg-shared",
+      "label": "Resource Group",
+      "subtitle": "rg-use-shared-dev (East US)",
+      "icon": "/icons/azure/management/resource-group.png"
+    },
+    {
+      "id": "rg-b2c",
+      "label": "Resource Group",
+      "subtitle": "rg-dx-b2c-use-dev (US)",
+      "icon": "/icons/azure/management/resource-group.png"
+    },
+    {
+      "id": "rg-default",
+      "label": "Resource Group",
+      "subtitle": "DefaultResourceGroup-EUS (East US)",
+      "icon": "/icons/azure/management/resource-group.png"
+    },
+    {
+      "id": "rg-infracodebase",
+      "label": "Resource Group",
+      "subtitle": "rg-use2-infracodebase-dev (East US 2)",
+      "icon": "/icons/azure/management/resource-group.png"
+    },
+    {
+      "id": "kv-shared",
+      "label": "Key Vault",
+      "subtitle": "kv-use-shared-dev",
+      "icon": "/icons/azure/security/key-vault.png"
+    },
+    {
+      "id": "storage-shared",
+      "label": "Storage Account",
+      "subtitle": "stouseshareddev",
+      "icon": "/icons/azure/storage/storage-account.png"
+    },
+    {
+      "id": "b2c-onward",
+      "label": "Azure AD B2C",
+      "subtitle": "onwardplatformsb2c.onmicrosoft.com",
+      "icon": "/icons/azure/identity/azure-active-directory-(legacy).png"
+    },
+    {
+      "id": "log-default",
+      "label": "Log Analytics",
+      "subtitle": "DefaultWorkspace-EUS",
+      "icon": "/icons/azure/management/log-analytics-workspace.png"
+    },
+    {
+      "id": "b2c-infra",
+      "label": "Azure AD B2C",
+      "subtitle": "infracodebase.onmicrosoft.com",
+      "icon": "/icons/azure/identity/azure-active-directory-(legacy).png"
+    },
+    {
+      "id": "storage-icb",
+      "label": "Storage Account",
+      "subtitle": "stouse2icbdev",
+      "icon": "/icons/azure/storage/storage-account.png"
+    },
+    {
+      "id": "asp-icb",
+      "label": "App Service Plan",
+      "subtitle": "asp-use2-infracodebase-dev",
+      "icon": "/icons/azure/application/app-service-plan.png"
+    },
+    {
+      "id": "app-icb",
+      "label": "App Service",
+      "subtitle": "app-infracodebase-use2-dev",
+      "icon": "/icons/azure/application/app-service.png"
+    },
+    {
+      "id": "psql-icb",
+      "label": "PostgreSQL",
+      "subtitle": "psqlflxsvr-use2-infracodebase-dev",
+      "icon": "/icons/azure/data/azure-database-for-postgresql.png"
+    },
+    {
+      "id": "kv-icb",
+      "label": "Key Vault",
+      "subtitle": "kv-use2-icb-dev",
+      "icon": "/icons/azure/security/key-vault.png"
+    },
+    {
+      "id": "log-icb",
+      "label": "Log Analytics",
+      "subtitle": "log-use2-infracodebase-dev",
+      "icon": "/icons/azure/management/log-analytics-workspace.png"
+    },
+    {
+      "id": "appi-icb",
+      "label": "Application Insights",
+      "subtitle": "appi-use2-infracodebase-dev",
+      "icon": "/icons/azure/management/application-insights.png"
+    },
+    {
+      "id": "alert-icb",
+      "label": "Alert Rule",
+      "subtitle": "Failure Anomalies",
+      "icon": "/icons/azure/management/alert.png"
+    },
+    {
+      "id": "cert-icb",
+      "label": "SSL Certificate",
+      "subtitle": "dev.infracodebase.com",
+      "icon": "/icons/azure/iot/certificate.png"
+    }
+  ],
+  "edges": [
+    {
+      "id": "rg-shared-kv",
+      "source": "rg-shared",
+      "target": "kv-shared",
+      "label": "contains"
+    },
+    {
+      "id": "rg-shared-storage",
+      "source": "rg-shared",
+      "target": "storage-shared",
+      "label": "contains"
+    },
+    {
+      "id": "rg-b2c-dir",
+      "source": "rg-b2c",
+      "target": "b2c-onward",
+      "label": "contains"
+    },
+    {
+      "id": "rg-default-log",
+      "source": "rg-default",
+      "target": "log-default",
+      "label": "contains"
+    },
+    {
+      "id": "rg-default-b2c",
+      "source": "rg-default",
+      "target": "b2c-infra",
+      "label": "contains"
+    },
+    {
+      "id": "rg-icb-storage",
+      "source": "rg-infracodebase",
+      "target": "storage-icb",
+      "label": "contains"
+    },
+    {
+      "id": "rg-icb-asp",
+      "source": "rg-infracodebase",
+      "target": "asp-icb",
+      "label": "contains"
+    },
+    {
+      "id": "rg-icb-app",
+      "source": "rg-infracodebase",
+      "target": "app-icb",
+      "label": "contains"
+    },
+    {
+      "id": "rg-icb-psql",
+      "source": "rg-infracodebase",
+      "target": "psql-icb",
+      "label": "contains"
+    },
+    {
+      "id": "rg-icb-kv",
+      "source": "rg-infracodebase",
+      "target": "kv-icb",
+      "label": "contains"
+    },
+    {
+      "id": "rg-icb-log",
+      "source": "rg-infracodebase",
+      "target": "log-icb",
+      "label": "contains"
+    },
+    {
+      "id": "rg-icb-appi",
+      "source": "rg-infracodebase",
+      "target": "appi-icb",
+      "label": "contains"
+    },
+    {
+      "id": "rg-icb-alert",
+      "source": "rg-infracodebase",
+      "target": "alert-icb",
+      "label": "contains"
+    },
+    {
+      "id": "rg-icb-cert",
+      "source": "rg-infracodebase",
+      "target": "cert-icb",
+      "label": "contains"
+    },
+    {
+      "id": "asp-app",
+      "source": "asp-icb",
+      "target": "app-icb",
+      "label": "hosts"
+    },
+    {
+      "id": "app-psql",
+      "source": "app-icb",
+      "target": "psql-icb",
+      "label": "connects to"
+    },
+    {
+      "id": "app-storage",
+      "source": "app-icb",
+      "target": "storage-icb",
+      "label": "uses"
+    },
+    {
+      "id": "app-kv",
+      "source": "app-icb",
+      "target": "kv-icb",
+      "label": "reads secrets"
+    },
+    {
+      "id": "app-appi",
+      "source": "app-icb",
+      "target": "appi-icb",
+      "label": "sends telemetry"
+    },
+    {
+      "id": "appi-log",
+      "source": "appi-icb",
+      "target": "log-icb",
+      "label": "stores data"
+    },
+    {
+      "id": "alert-appi",
+      "source": "alert-icb",
+      "target": "appi-icb",
+      "label": "monitors"
+    },
+    {
+      "id": "cert-app",
+      "source": "cert-icb",
+      "target": "app-icb",
+      "label": "secures"
+    },
+    {
+      "id": "app-shared-storage",
+      "source": "app-icb",
+      "target": "storage-shared",
+      "label": "may use"
+    },
+    {
+      "id": "app-shared-kv",
+      "source": "app-icb",
+      "target": "kv-shared",
+      "label": "may access"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+aws_region = "us-east-1"
+environment = "dev"
+project_name = "infracodebase"
+availability_zones = ["us-east-1a", "us-east-1b"]
+vpc_cidr = "10.0.0.0/16"
+database_name = "infracodebase"
+database_username = "dbadmin"
+app_name = "infracodebase-app"
+app_port = 3000
+domain_name = "infracodebase.example.com"
